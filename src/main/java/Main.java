@@ -18,9 +18,7 @@ public class Main {
         System.out.println(numbers);
 
         List<Integer> doubledAndSortedEvenNumbers = numbers.stream()
-                .filter((number) -> {
-                    return number % 2 == 0;
-                })
+                .filter((number) -> number % 2 == 0)
                 .peek(System.out::println)
                 .map((number) -> number * 2)
                 .sorted()
@@ -28,14 +26,15 @@ public class Main {
 
         System.out.println(doubledAndSortedEvenNumbers);
 
-        int sumOfDoubledAndSortedEvenNumbers = doubledAndSortedEvenNumbers.stream().reduce(0, Integer::sum);
+        int sumOfDoubledAndSortedEvenNumbers = doubledAndSortedEvenNumbers.stream()
+                .reduce(0, Integer::sum);
 
         System.out.println("sumOfDoubledAndSortedEvenNumbers: " + sumOfDoubledAndSortedEvenNumbers);
 
         doubledAndSortedEvenNumbers.forEach(System.out::println);
 
         try (Stream<String> lines = Files.lines(Path.of("students.csv"))) {
-//            lines.peek(System.out::println);
+//            lines.forEach(System.out::println);
 
             List<Student> students = lines
                     .skip(1)
