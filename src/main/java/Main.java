@@ -13,9 +13,12 @@ public class Main {
 
         System.out.println(numbers);
 
-        List<Integer> evenNumbers = numbers.stream().filter((number) -> {return number % 2 == 0;}).peek(System.out::println).collect(Collectors.toList());
+        List<Integer> evenNumbers = numbers.stream()
+                .filter((number) -> {
+                    return number % 2 == 0;
+                })
+                .peek(System.out::println).collect(Collectors.toList());
+
         System.out.println(evenNumbers);
-
-
     }
 }
