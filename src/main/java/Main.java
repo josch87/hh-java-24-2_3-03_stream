@@ -17,8 +17,12 @@ public class Main {
                 .filter((number) -> {
                     return number % 2 == 0;
                 })
-                .peek(System.out::println).collect(Collectors.toList());
+                .peek(System.out::println)
+                .map((number) -> number * 2)
+                .collect(Collectors.toList());
 
         System.out.println(evenNumbers);
+
+
     }
 }
