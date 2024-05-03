@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println(numbers);
 
-        List<Integer> evenNumbers = numbers.stream()
+        List<Integer> doubledAndSortedEvenNumbers = numbers.stream()
                 .filter((number) -> {
                     return number % 2 == 0;
                 })
@@ -22,8 +22,10 @@ public class Main {
                 .sorted()
                 .collect(Collectors.toList());
 
-        System.out.println(evenNumbers);
+        System.out.println(doubledAndSortedEvenNumbers);
 
+        int sumOfdoubledAndSortedEvenNumbers = doubledAndSortedEvenNumbers.stream().reduce(0, Integer::sum);
 
+        System.out.println("sumOfdoubledAndSortedEvenNumbers: " + sumOfdoubledAndSortedEvenNumbers);
     }
 }
