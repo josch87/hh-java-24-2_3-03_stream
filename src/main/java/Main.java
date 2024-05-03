@@ -19,6 +19,7 @@ public class Main {
                 })
                 .peek(System.out::println)
                 .map((number) -> number * 2)
+                .sorted()
                 .collect(Collectors.toList());
 
         System.out.println(evenNumbers);
