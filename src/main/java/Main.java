@@ -39,6 +39,7 @@ public class Main {
             List<Student> students = lines
                     .skip(1)
                     .filter((line) -> !line.isEmpty())
+                    .distinct()
                     .map((line) -> {
                         String[] values = line.split(",");
                         return new Student(Integer.parseInt(values[0]), values[1], values[2], Integer.parseInt(values[3]));
