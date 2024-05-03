@@ -24,8 +24,10 @@ public class Main {
 
         System.out.println(doubledAndSortedEvenNumbers);
 
-        int sumOfdoubledAndSortedEvenNumbers = doubledAndSortedEvenNumbers.stream().reduce(0, Integer::sum);
+        int sumOfDoubledAndSortedEvenNumbers = doubledAndSortedEvenNumbers.stream().reduce(0, Integer::sum);
 
-        System.out.println("sumOfdoubledAndSortedEvenNumbers: " + sumOfdoubledAndSortedEvenNumbers);
+        System.out.println("sumOfDoubledAndSortedEvenNumbers: " + sumOfDoubledAndSortedEvenNumbers);
+
+        doubledAndSortedEvenNumbers.forEach(System.out::println);
     }
 }
