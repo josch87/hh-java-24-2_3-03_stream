@@ -33,7 +33,7 @@ public class Main {
 
         doubledAndSortedEvenNumbers.forEach(System.out::println);
 
-        try (Stream<String> lines = Files.lines(Path.of("students.csv"))) {
+        try (Stream<String> lines = Files.lines(Path.of("src/main/resources/students.csv"))) {
 //            lines.forEach(System.out::println);
 
             List<Student> students = lines
